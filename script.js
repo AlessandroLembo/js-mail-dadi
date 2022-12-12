@@ -63,17 +63,47 @@ stampa un messaggio appropriato sull’esito del controllo.*/
 
 1 - Creo un lista di email autorizzate
 2 - Prendo gli elementi dalla pagina
-3 - Chiedo all'utente la sua email tramite form
-4 - Controllo se l'email inserita si trova nella lista
-5 - Stampo in pagina un messaggio con l'esito del controllo
+3 - Aggancio l'event listener al button che inserisce l'email
+4 - Inserisco l'email e la salvo in una variabile
+5 - Controllo se l'email inserita si trova nella lista
+6 - Stampo in pagina un messaggio con l'esito del controllo
 */
 
 // 1 - Creo una lista di email autrizzate
 const emailValid = ['ale@gmail.com', 'ale@hotmail.com', 'ale@libero.com'];
-console.log(emailValid);
+// const firstElement = emailValid[0];
+// console.log(firstElement);
 
 // 2 - Prendo gli elementi dalla pagina
 const emailElement = document.getElementById('email');
-console.log(emailElement);
+const buttonElement = document.getElementById('check-email');
+const resultMessage = document.getElementById('result');
+// console.log(buttonElement);
+// console.log(emailElement);
+
+// 3 - Aggancio l'event listener al button che inserisce l'email
+buttonElement.addEventListener('click', function() {
+
+    // 4 - l'utente inserisce l'email e la salva in una variabile
+     let emailAuthorized = emailElement.value;
+
+    /* 5e6 - Controllo se l'email inserita si trova nella lista
+             e stampo il messaggio in pagina */
+    for(let i = 0; i < emailValid.length; i++) {
+        const currentEmail = emailValid[i];
+       
+       if (currentEmail !== emailAuthorized) {
+        // console.log(`non valida`);
+        resultMessage.innerText = (`Accesso non autorizzato`);
+
+       } else {
+        // console.log(`accesso autorizzato`);
+        resultMessage.innerText = (`Puoi inserire la password`);
+       } 
+        
+    }
+
+})
+
 
 
