@@ -61,13 +61,19 @@ stampa un messaggio appropriato sull’esito del controllo.*/
 //* ESERCIZIO 2: FINTA LOGIN
 /* Analisi
 
-1 - Prendo gli elementi dalla pagina
-2 - Creo un lista di email autorizzate
+1 - Creo un lista di email autorizzate
+2 - Prendo gli elementi dalla pagina
 3 - Chiedo all'utente la sua email tramite form
 4 - Controllo se l'email inserita si trova nella lista
 5 - Stampo in pagina un messaggio con l'esito del controllo
 */
 
-// 1 - Prendo gli elementi dalla pagina
+// 1 - Creo una lista di email autrizzate
+const emailValid = ['ale@gmail.com', 'ale@hotmail.com', 'ale@libero.com'];
+console.log(emailValid);
+
+// 2 - Prendo gli elementi dalla pagina
 const emailElement = document.getElementById('email');
 console.log(emailElement);
+
+
