@@ -15,7 +15,7 @@ controlla che sia nella lista di chi può accedere,
 stampa un messaggio appropriato sull’esito del controllo.*/
 
 
-//* ESERCIZIO 1
+//* ESERCIZIO 1: GIOCO DEI DADI
 /* Analisi
 
 1 - Prendo gli elementi dalla pagina
@@ -26,33 +26,48 @@ stampa un messaggio appropriato sull’esito del controllo.*/
 */
 
 // 1 - Prendo gli elementi dalla pagina
-const winnerUser = document.getElementById('winner');
-const pcNumber = document.getElementById('pc-number');
-const userNumber = document.getElementById('user-number');
+// const winnerUser = document.getElementById('winner');
+// const pcNumber = document.getElementById('pc-number');
+// const userNumber = document.getElementById('user-number');
 
 
-// 2e3 - Generare i due numeri random
-const randomNumberPc = Math.floor(Math.random() * 6) + 1;
-console.log(`Il dado lanciato dal Pc ha fatto ${randomNumberPc}`);
+// // 2e3 - Generare i due numeri random
+// const randomNumberPc = Math.floor(Math.random() * 6) + 1;
+// console.log(`Il dado lanciato dal Pc ha fatto ${randomNumberPc}`);
 
-const randomNumberUser = Math.floor(Math.random() * 6) + 1;
-console.log(`Il dado lanciato dall'utente ha fatto ${randomNumberUser}`);
+// const randomNumberUser = Math.floor(Math.random() * 6) + 1;
+// console.log(`Il dado lanciato dall'utente ha fatto ${randomNumberUser}`);
 
-// 4 - Stabilire chi è il vincitore
-if (randomNumberPc === randomNumberUser) {
-    console.log(`Pareggio!: rilancia i dadi`);
-    winnerUser.innerText = (`Pareggio!: Rilancia i dadi`);
-} else if (randomNumberPc > randomNumberUser) {
-    console.log(`Il vincitore è il pc`);
-    winnerUser.innerText = (`Il vincitore è il Pc con il numero ${randomNumberPc}`);
-} else {
-    console.log(`Il vincitore è l'utente`);
-    winnerUser.innerText = (`Il vincitore è l'utente con il numero ${randomNumberUser}`);
-}
+// // 4 - Stabilire chi è il vincitore
+// if (randomNumberPc === randomNumberUser) {
+//     console.log(`Pareggio!: rilancia i dadi`);
+//     winnerUser.innerText = (`Pareggio!: Rilancia i dadi`);
+// } else if (randomNumberPc > randomNumberUser) {
+//     console.log(`Il vincitore è il pc`);
+//     winnerUser.innerText = (`Il vincitore è il Pc con il numero ${randomNumberPc}`);
+// } else {
+//     console.log(`Il vincitore è l'utente`);
+//     winnerUser.innerText = (`Il vincitore è l'utente con il numero ${randomNumberUser}`);
+// }
 
-// 5 - Stampo in pagina i numeri e il risultato
-pcNumber.innerText = (`Il dado del Pc ha fatto ${randomNumberPc}`);
-userNumber.innerText = (`Il dado dell'utente ha fatto ${randomNumberUser}`);
+// // 5 - Stampo in pagina i numeri e il risultato
+// pcNumber.innerText = (`Il dado del Pc ha fatto ${randomNumberPc}`);
+// userNumber.innerText = (`Il dado dell'utente ha fatto ${randomNumberUser}`);
 
 
+//* -----------------------------------------------------------------------------------------
+//* -----------------------------------------------------------------------------------------
 
+//* ESERCIZIO 2: FINTA LOGIN
+/* Analisi
+
+1 - Prendo gli elementi dalla pagina
+2 - Creo un lista di email autorizzate
+3 - Chiedo all'utente la sua email tramite form
+4 - Controllo se l'email inserita si trova nella lista
+5 - Stampo in pagina un messaggio con l'esito del controllo
+*/
+
+// 1 - Prendo gli elementi dalla pagina
+const emailElement = document.getElementById('email');
+console.log(emailElement);
