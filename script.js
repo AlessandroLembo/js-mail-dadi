@@ -73,8 +73,10 @@ winnerUser.innerText = message;
 2 - Prendo gli elementi dalla pagina
 3 - Aggancio l'event listener al button che inserisce l'email
 4 - Inserisco l'email e la salvo in una variabile
-5 - Controllo se l'email inserita si trova nella lista
-6 - Stampo in pagina un messaggio con l'esito del controllo
+5 - Controllo se ho inserito qualcosa nel campo email
+6 - dichiarazione di 2 variabili esterne al ciclo for
+7 - Controllo se l'email inserita si trova nella lista
+8 - Stampo in pagina un messaggio con l'esito del controllo
 */
 
 // 1 - Creo una lista di email autrizzate
@@ -91,17 +93,31 @@ const resultMessage = document.getElementById('result');
 buttonElement.addEventListener('click', function() {
 
     // 4 - l'utente inserisce l'email e la salva in una variabile
-     let myEmail = emailElement.value;
+     const myEmail = emailElement.value.trim();
+
+    // 5 - Controllo se ho inserito un'email
+    if (!myEmail) {
+        resultMessage.innerText = "Devi inserire un' email";
+        return;
+    } 
     
-    /* 5e6 controllo se l'email inserita si trova nella lista e
-       stampo in pagina il messaggio */
-    if (myEmail === emailValid[0] || myEmail === emailValid[1] || myEmail === emailValid[2]){
-        resultMessage.innerText = (`Puoi inserire la password`);
-        
-    } else {
-        resultMessage.innerText = (`Accesso non autorizzato`);
+    // 6 - dichiaro una variabile a cui assegno un valore booleano e una in cui raccolgo un messaggio
+    let isAuthorized = false;
+    let messageOnPage = "Acesso non autorizzato";
+
+
+    // 7 - controllo se l'email inserita si trova nella lista 
+    for (let i = 0; i < emailValid.length && !isAuthorized; i++) {
+        const currentEmail = emailValid[i];
+
+        if (currentEmail === myEmail) {
+            isAuthorized = true;
+            messageOnPage = "Puoi inserire la password";
+        }
     }
 
+    // 8 - Stampo in pagina il messaggio
+    resultMessage.innerText = messageOnPage;
 })
 
 
