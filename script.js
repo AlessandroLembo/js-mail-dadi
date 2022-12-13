@@ -38,21 +38,27 @@ console.log(`Il dado lanciato dal Pc ha fatto ${randomNumberPc}`);
 const randomNumberUser = Math.floor(Math.random() * 6) + 1;
 console.log(`Il dado lanciato dall'utente ha fatto ${randomNumberUser}`);
 
+let message;
+
 // 4 - Stabilire chi è il vincitore
 if (randomNumberPc === randomNumberUser) {
-    console.log(`Pareggio!: rilancia i dadi`);
-    winnerUser.innerText = (`Pareggio!: Rilancia i dadi`);
+    // console.log(`Pareggio!: rilancia i dadi`);
+    // winnerUser.innerText = (`Pareggio!: Rilancia i dadi`);
+    message = "Pareggio!: rilancia di dadi";
 } else if (randomNumberPc > randomNumberUser) {
-    console.log(`Il vincitore è il pc`);
-    winnerUser.innerText = (`Il vincitore è il Pc con il numero ${randomNumberPc}`);
+    // console.log(`Il vincitore è il pc`);
+    // winnerUser.innerText = (`Il vincitore è il Pc con il numero ${randomNumberPc}`);
+    message = `Il vincitore è il Pc con il numero ${randomNumberPc}`;
 } else {
-    console.log(`Il vincitore è l'utente`);
-    winnerUser.innerText = (`Il vincitore è l'utente con il numero ${randomNumberUser}`);
+    // console.log(`Il vincitore è l'utente`);
+    // winnerUser.innerText = (`Il vincitore è l'utente con il numero ${randomNumberUser}`);
+    message = `Il vincitore è l'utente con il numero ${randomNumberUser}`;
 }
 
 // 5 - Stampo in pagina i numeri e il risultato
 pcNumber.innerText = (`Il dado del Pc ha fatto ${randomNumberPc}`);
 userNumber.innerText = (`Il dado dell'utente ha fatto ${randomNumberUser}`);
+winnerUser.innerText = message;
 
 
 //* -----------------------------------------------------------------------------------------
