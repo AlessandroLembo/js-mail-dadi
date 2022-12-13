@@ -21,8 +21,9 @@ stampa un messaggio appropriato sull’esito del controllo.*/
 1 - Prendo gli elementi dalla pagina
 2 - Generare un numero random per il pc
 3 - Generare un numero random per il giocatore
-4 - Confrontare i numeri e stabilire chi è il vincitore
-5 - Stampiamo in pagina i numeri e il risultato 
+4 - Dichiaro una variabile dove raccolgo i messagi da stampare
+5 - Confrontare i numeri e stabilire chi è il vincitore
+6 - Stampiamo in pagina i numeri e il risultato 
 */
 
 // 1 - Prendo gli elementi dalla pagina
@@ -38,9 +39,10 @@ console.log(`Il dado lanciato dal Pc ha fatto ${randomNumberPc}`);
 const randomNumberUser = Math.floor(Math.random() * 6) + 1;
 console.log(`Il dado lanciato dall'utente ha fatto ${randomNumberUser}`);
 
+// 4 - Dichiaro una variabile dove raccolgo i messagi da stampare
 let message;
 
-// 4 - Stabilire chi è il vincitore
+// 5 - Stabilire chi è il vincitore
 if (randomNumberPc === randomNumberUser) {
     // console.log(`Pareggio!: rilancia i dadi`);
     // winnerUser.innerText = (`Pareggio!: Rilancia i dadi`);
@@ -55,7 +57,7 @@ if (randomNumberPc === randomNumberUser) {
     message = `Il vincitore è l'utente con il numero ${randomNumberUser}`;
 }
 
-// 5 - Stampo in pagina i numeri e il risultato
+// 6 - Stampo in pagina i numeri e il risultato
 pcNumber.innerText = (`Il dado del Pc ha fatto ${randomNumberPc}`);
 userNumber.innerText = (`Il dado dell'utente ha fatto ${randomNumberUser}`);
 winnerUser.innerText = message;
